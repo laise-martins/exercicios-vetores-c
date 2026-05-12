@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    char palavra[100];
+    int i = 0, tamanho = 0;
+    int palindromo = 1;
+
+    printf("Digite uma palavra: ");
+    scanf("%s", palavra);
+
+    // Descobrir tamanho
+    while(palavra[tamanho] != '\0') {
+        tamanho++;
+    }
+
+    // Comparar extremos
+    for(i = 0; i < tamanho / 2; i++) {
+        if(palavra[i] != palavra[tamanho - 1 - i]) {
+            palindromo = 0;
+        }
+    }
+
+    if(palindromo) {
+        printf("A palavra e um palindromo.\n");
+    }
+    else {
+        printf("A palavra nao e um palindromo.\n");
+    }
+
+    return 0;
+}
